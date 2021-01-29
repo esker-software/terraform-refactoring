@@ -6,12 +6,6 @@ provider "azurerm" {
 
 terraform {
   required_version = ">= 0.13"
-  backend "azurerm" {
-    resource_group_name  = "QA-TERRAFORM"
-    storage_account_name = "eskerqaterraform"
-    container_name       = "test-rg"
-    key                  = "test-rg.tfstate"
-  }
 }
 
 locals {
