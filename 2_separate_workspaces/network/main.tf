@@ -10,7 +10,7 @@ terraform {
 
 locals {
   location            = "westeurope"
-  resource_group_name = "my_rg"
+  resource_group_name = "test_rg"
 }
 
 resource "azurerm_virtual_network" "network" {
@@ -24,5 +24,5 @@ resource "azurerm_subnet" "my_subnet" {
   name                 = "my_subnet"
   virtual_network_name = azurerm_virtual_network.network.name
   resource_group_name  = local.resource_group_name
-  address_prefix       = "10.0.0.1/28"
+  address_prefixes       = ["10.0.1.0/28"]
 }
